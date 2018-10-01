@@ -11,7 +11,7 @@ APP_CODE_PATH_HOST=../
 APP_CODE_PATH_CONTAINER=/var/www:cached
 
 # Choose storage path on your machine. For all storage systems
-DATA_PATH_HOST=~/.kkdock/data
+DATA_PATH_HOST=~/.kkdock-api/data
 
 ### Drivers ################################################
 
@@ -47,7 +47,7 @@ DOCKER_HOST_IP=10.0.75.1
 ### Remote Interpreter ####################################
 
 # Choose a Remote Interpreter entry matching name. Default is `laradock`
-PHP_IDE_CONFIG=serverName=kkdock
+PHP_IDE_CONFIG=serverName=kkdock-api
 
 ### Windows Path ##########################################
 
@@ -153,6 +153,17 @@ NGINX_SITES_PATH=./nginx/sites/
 NGINX_PHP_UPSTREAM_CONTAINER=php-fpm
 NGINX_PHP_UPSTREAM_PORT=9000
 
+### APACHE ################################################
+
+APACHE_HOST_HTTP_PORT=80
+APACHE_HOST_HTTPS_PORT=443
+APACHE_HOST_LOG_PATH=./logs/apache2
+APACHE_SITES_PATH=./apache2/sites
+APACHE_PHP_UPSTREAM_CONTAINER=php-fpm
+APACHE_PHP_UPSTREAM_PORT=9000
+APACHE_PHP_UPSTREAM_TIMEOUT=60
+APACHE_DOCUMENT_ROOT=/var/www/
+
 ### MYSQL #################################################
 
 MYSQL_VERSION=latest
@@ -178,8 +189,8 @@ MSSQL_PORT=1433
 
 Postgres_HOST_DIR=./Postgres_data
 POSTGRES_DB=kkdb
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=kkday
+POSTGRES_USER=kkuser
+POSTGRES_PASSWORD=Passw0rd
 POSTGRES_PORT=5432
 
 ### RABBITMQ ##############################################
@@ -189,6 +200,11 @@ RABBITMQ_MANAGEMENT_HTTP_HOST_PORT=15672
 RABBITMQ_MANAGEMENT_HTTPS_HOST_PORT=15671
 RABBITMQ_DEFAULT_USER=guest
 RABBITMQ_DEFAULT_PASS=guest
+
+### ELASTICSEARCH #########################################
+
+ELASTICSEARCH_HOST_HTTP_PORT=9200
+ELASTICSEARCH_HOST_TRANSPORT_PORT=9300
 
 ### KIBANA ################################################
 
