@@ -8,9 +8,7 @@ RUN echo "root:root" | chpasswd
 
 COPY sshd_config /etc/ssh/
 
-CMD ["postgres"];
-
 EXPOSE 5022
 EXPOSE 5432
 
-CMD service ssh start;docker-entrypoint.sh postgres
+CMD ["postgres"];docker-entrypoint.sh postgres
